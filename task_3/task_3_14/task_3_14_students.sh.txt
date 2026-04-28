@@ -1,0 +1,19 @@
+#!/bin/bash
+cat > students.txt << EOF
+Ivan 78
+Maria 92
+Oleg 67
+Anna 85
+EOF
+echo "====================================="
+echo "Анализ файла students.txt"
+echo "====================================="
+echo ""
+echo "1. Имена студентов"
+awk '{print $1}' students.txt
+echo ""
+echo "2. Оценки студентов"
+awk '{print $2}' students.txt
+echo ""
+echo "3. Номер строки и имя студента"
+awk '{print NR, $1}' students.txt

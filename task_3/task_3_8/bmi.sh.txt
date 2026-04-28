@@ -1,0 +1,10 @@
+#!binbash
+echo Калькулятор ИМТ
+echo 
+echo -n Введите массу (кг) 
+read weight
+echo -n Введите рост (м) 
+read height
+bmi=$(echo $weight  ($height  $height)  bc  cut -d '.' -f1)
+echo 
+echo Ваш ИМТ $bmi

@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "Создание файлов..."
+for i in {1..10}; do
+filename="test$i.txt"
+touch "$filename"
+echo "Создан файл: $filename"
+done
+echo ""
+echo "Все файлы созданы. Начинаем удаление..."
+echo ""
+counter=10
+while [$counter -ge 1]; do
+filename="test$counter.txt"
+rm "$filename"
+echo "Удалён файл: $filename"
+counter=$((counter - 1))
+done
+echo ""
+echo "Все файлы удалены."

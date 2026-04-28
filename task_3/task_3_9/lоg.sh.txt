@@ -1,0 +1,16 @@
+FILE_PATH="./system.log"
+ERROR_CODE=0
+if [ -f "$FILE_PATH" ]; then
+echo "Лог-файл найден."
+else
+echo "Ошибка: файл не существует."
+ERROR_CODE=1
+fi
+case $ERROR_CODE in
+0)
+echo "Статус: ошибок нет" ;;
+1)
+echo "Статус: Критическая ошибка!" ;;
+*)
+echo "Статус: неизвестный код." ;;
+esac

@@ -1,0 +1,21 @@
+#!/bin/bash
+cat > data.csv << EOF
+1,mouse,23
+2,keyboard,15
+3,monitor,120
+4,usb,5
+EOF
+
+echo "========================="
+echo "Анализ товаров (data.csv)"
+echo "========================="
+echo ""
+echo "1. Названия товаров:"
+cut -d',' -f2 data.csv
+echo ""
+echo "2. Товары дороже 20:"
+awk -F',' '$3 > 20{print $2 " - " $3 "$"}' data.csv
+echo ""
+echo "3. Общая стоимость всех товаров:"
+total=$(awk -F',' '{sum += $3} END {print sum}' data.csv)
+echo "$total $"
